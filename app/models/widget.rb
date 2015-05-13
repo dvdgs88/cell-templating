@@ -1,13 +1,18 @@
 class Widget < ActiveRecord::Base
-  WIDGET_OPTIONS = []
+  cattr_accessor :widget_options
+
+  store_accessor :options, * widget_options
 
   belongs_to :block
 
-  validate :widget_options
+  validate :widget_options_validation
 
-  def widget_options
-    options.each do |opt|
-      return false unless WIDGET_OPTIONS.include? opt[0]
+  private
+
+  def widget_options_validation
+    options.each_key do |opt|
+      puts 'validating ' + opt
+      errors.add(:base, :invalid) unless widget_options.include? opt
     end
   end
 end
