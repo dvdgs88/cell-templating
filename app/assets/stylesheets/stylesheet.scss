@@ -1,0 +1,13 @@
+// Place all the styles related to the PagesController controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #F6F6F6;
+  .container {
+    margin: auto; border: 1px solid #EEE; background-color: #FFF; padding: 20px; width: 1000px;
+    .block { display: inline-block; vertical-align: top; }
+    .block-6 { width: 60%; }
+    .block-4 { width: 40%; }
+    .widget { border: 1px solid #CCC; padding: 10px; }
+  }
+}

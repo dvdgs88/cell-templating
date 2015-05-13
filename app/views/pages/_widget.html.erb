@@ -1,0 +1,5 @@
+<% widgets.each do |widget| %>
+  <div class="widget">
+    <%= render_cell widget.type, :show, :collection => widget.collection %>
+  </div>
+<% end %>

@@ -1,0 +1,6 @@
+<h1><%=@page.name%></h1>
+<div class="block block-6">
+  <%= render "pages/widget", widgets: @page.blocks.where(block_type: "main").first.widgets %>
+</div><div class="block block-4">
+  <%= render "pages/widget", widgets: @page.blocks.where(block_type: "side").first.widgets %>
+</div>
