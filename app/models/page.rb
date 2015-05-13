@@ -9,11 +9,7 @@ class Page < ActiveRecord::Base
   private
 
     def add_blocks
-      # self.blocks << Block.create({block_type:"main"})
-      # self.blocks << Block.create({block_type:"side"})
       blocks.create({block_type:"main"})
       blocks.create({block_type:"side"})
     end
-
-
 end
