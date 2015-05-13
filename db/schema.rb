@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20150512150343) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "articles", ["title"], name: "index_articles_on_title", using: :btree
+
   create_table "blocks", force: :cascade do |t|
     t.string   "block_type"
     t.integer  "page_id"
@@ -31,11 +33,15 @@ ActiveRecord::Schema.define(version: 20150512150343) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "blocks", ["block_type"], name: "index_blocks_on_block_type", using: :btree
+
   create_table "pages", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "pages", ["name"], name: "index_pages_on_name", using: :btree
 
   create_table "widgets", force: :cascade do |t|
     t.string   "name"
