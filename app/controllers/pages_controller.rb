@@ -10,8 +10,7 @@ class PagesController < ApplicationController
 
   private
 
-    def load_pages
-      @pages = Page.all
-    end
-
+  def load_pages
+    @pages = Page.all
+  end
 end

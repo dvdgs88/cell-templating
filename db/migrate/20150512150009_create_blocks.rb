@@ -6,5 +6,7 @@ class CreateBlocks < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_foreign_key :blocks, :pages
   end
 end

@@ -8,8 +8,8 @@ class Page < ActiveRecord::Base
 
   private
 
-    def add_blocks
-      blocks.create({block_type:"main"})
-      blocks.create({block_type:"side"})
-    end
+  def add_blocks
+    blocks.create(block_type: 'main')
+    blocks.create(block_type: 'side')
+  end
 end

@@ -8,5 +8,8 @@ class CreateWidgets < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_foreign_key :widgets, :blocks
+    add_index :widgets, :options, using: :gin
   end
 end

@@ -1,5 +1,11 @@
 class ArticleListWidget < Widget
-  def collection
-    articles = Article.limit(options.max[1]).all
+  WIDGET_OPTIONS = ['max']
+
+  store_accessor :options, :max
+
+  validates_numericality_of :max
+
+  def articles
+    Article.all.limit(max)
   end
 end

@@ -46,4 +46,8 @@ ActiveRecord::Schema.define(version: 20150512150343) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "widgets", ["options"], name: "index_widgets_on_options", using: :gin
+
+  add_foreign_key "blocks", "pages"
+  add_foreign_key "widgets", "blocks"
 end
